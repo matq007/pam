@@ -8,6 +8,9 @@ class Listener:
         self.recognizer = sr.Recognizer()
         self.microphone = sr.Microphone()
 
+        self.microphone.SAMPLE_RATE = 48000
+        self.microphone.CHUNK = 1024
+
     def run(self):
         with sr.Microphone() as source:
             print("Say something!")

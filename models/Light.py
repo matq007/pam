@@ -35,17 +35,17 @@ class Light:
 
     def turn_on(self):
         text = "Light is on"
-        response = 'espeak "%s"' % text
+        response = 'echo "%s" | festival --tts' % text
         Executor(text, response)
 
     def turn_off(self):
         text = "Light is off"
-        response = 'espeak "%s"' % text
+        response = 'echo "%s" | festival --tts' % text
         Executor(text, response)
 
     def set_intensity(self):
         text = "Light is on %s percent" % self.percent
-        response = 'espeak "%s"' % text
+        response = 'echo "%s" | festival --tts' % text
         Executor(text, response)
 
 
