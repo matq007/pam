@@ -7,9 +7,12 @@ class SentenceParser:
     def __init__(self, sentence):
         self.sentence = TextBlob(sentence)
         self.analyze()
+        print self.sentence.words
 
     def analyze(self):
         keyword_exists = False
+
+        # TODO: Check if keywords exists in our database
 
         for word, pos in self.sentence.tags:
             if pos.encode('utf-8') == "NN":

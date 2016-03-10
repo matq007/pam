@@ -5,13 +5,16 @@ from classes.SentenceParser import SentenceParser
 
 if __name__ == "__main__":
 
+    # SEARCH/CREATE CONFIG
+    config = Configure()
+
     # SETTING VARIABLES FROM CONFIG
     print "Reading configuration file"
-    config = Configure()
+
     listener = Listener(config.WIT_AUTH_KEY)
 
     print "Starting listening"
-    # sentence = listener.run()
-    sentence = "Lights 90"
+    sentence = listener.run()
+    # sentence = "Lights 90"
     sentence_parser = SentenceParser(sentence)
 
